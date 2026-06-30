@@ -26,4 +26,12 @@ class Product extends Model
             'stok' => 'integer',
         ];
     }
+
+    public static function generateId(): string
+    {
+        $last = static::query()->orderByDesc('id_product')->value('id_product');
+        $next = $last ? ((int) substr($last, 4)) + 1 : 1;
+
+        return 'PRD-' . str_pad((string) $next, 3, '0', STR_PAD_LEFT);
+    }
 }

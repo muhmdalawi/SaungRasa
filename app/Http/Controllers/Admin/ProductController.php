@@ -42,6 +42,7 @@ class ProductController extends Controller
 
         Product::create([
             ...$request->validated(),
+            'id_product' => Product::generateId(),
             'gambar' => $path,
         ]);
 

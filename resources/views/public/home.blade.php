@@ -6,18 +6,26 @@
 
 <section class="hero-section text-center">
     <div class="container animate-fade-up">
+        <span class="d-inline-block px-3 py-1 mb-3 rounded-pill" style="background:rgba(255,255,255,.15); font-size:.85rem; letter-spacing:.05em;">
+            <i class="bi bi-stars me-1"></i> UMKM Kuliner Khas Sunda
+        </span>
         <h1 class="display-5 mb-3">Cita Rasa Sunda yang Autentik & Modern</h1>
         <p class="lead mb-4 mx-auto" style="max-width:640px;">
             Saung Rasa menghadirkan beragam hidangan dan minuman khas Sunda dengan kualitas premium,
             disiapkan dengan resep turun-temurun dan sentuhan presentasi modern.
         </p>
-        <a href="#produk" class="btn btn-brand-secondary rounded-pill px-4 py-2">
-            <i class="bi bi-egg-fried me-1"></i> Lihat Produk Kami
-        </a>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="#produk" class="btn btn-brand-secondary rounded-pill px-4 py-2">
+                <i class="bi bi-egg-fried me-1"></i> Lihat Produk Kami
+            </a>
+            <a href="#tentang" class="btn btn-outline-light rounded-pill px-4 py-2">
+                Tentang Kami
+            </a>
+        </div>
     </div>
 </section>
 
-<section class="container py-5">
+<section class="container py-5" id="tentang">
     <div class="row align-items-center g-4">
         <div class="col-lg-6">
             <h2 class="section-title">Tentang Saung Rasa</h2>
@@ -107,6 +115,10 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+
+        <div class="mt-4">
+            {{ $products->links() }}
         </div>
     @endif
 </section>

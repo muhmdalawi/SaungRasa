@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class UpdateProductRequest extends FormRequest
 {
@@ -18,12 +17,6 @@ class UpdateProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id_product' => [
-                'required',
-                'string',
-                'max:50',
-                Rule::unique('products', 'id_product')->ignore($this->route('product')),
-            ],
             'gambar' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
             'nama_product' => ['required', 'string', 'max:150'],
             'kategori' => ['required', 'string', 'max:100'],
@@ -39,9 +32,6 @@ class UpdateProductRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'id_product.required' => 'ID Product wajib diisi.',
-            'id_product.unique' => 'ID Product sudah digunakan, gunakan ID lain.',
-            'id_product.max' => 'ID Product maksimal 50 karakter.',
             'gambar.image' => 'File yang diunggah harus berupa gambar.',
             'gambar.mimes' => 'Format gambar harus jpg, jpeg, atau png.',
             'gambar.max' => 'Ukuran gambar maksimal 2 MB.',

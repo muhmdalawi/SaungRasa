@@ -33,13 +33,6 @@
             <div class="col-md-8">
                 <div class="row g-3">
                     <div class="col-md-6">
-                        <label for="id_product" class="form-label">ID Product</label>
-                        <input type="text" name="id_product" id="id_product" class="form-control @error('id_product') is-invalid @enderror" value="{{ old('id_product') }}" placeholder="Contoh: PRD-011">
-                        @error('id_product')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="col-md-6">
                         <label for="nama_product" class="form-label">Nama Product</label>
                         <input type="text" name="nama_product" id="nama_product" class="form-control @error('nama_product') is-invalid @enderror" value="{{ old('nama_product') }}">
                         @error('nama_product')

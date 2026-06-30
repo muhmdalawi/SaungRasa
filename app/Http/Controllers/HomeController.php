@@ -20,7 +20,8 @@ class HomeController extends Controller
                 });
             })
             ->latest()
-            ->get();
+            ->paginate(8)
+            ->withQueryString();
 
         $featuredProducts = Product::query()->latest()->take(4)->get();
 
